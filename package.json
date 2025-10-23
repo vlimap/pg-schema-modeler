@@ -1,0 +1,45 @@
+{
+  "name": "pg-schema-modeler",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "cd apps/web && npm run dev",
+    "dev:api": "cd apps/api && npm run dev",
+    "dev:all": "concurrently \"npm run dev:web\" \"npm run dev:api\"",
+    "test:web": "cd apps/web && npm run test",
+    "test:api": "cd apps/api && npm run test",
+    "test": "npm run test:web && npm run test:api",
+    "lint": "eslint . --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.29.1",
+    "@types/node": "^20.4.1",
+    "@types/react": "^18.2.14",
+    "@vitejs/plugin-react": "^4.0.0",
+    "jest": "^29.5.0",
+    "prettier": "^3.0.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9",
+    "vitest": "^0.30.3"
+  },
+  "dependencies": {
+    "@xyflow/react": "^3.0.0",
+    "@zod": "latest",
+    "blockly": "^9.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "pg": "^8.11.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zod": "^3.22.4"
+  }
+}
